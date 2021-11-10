@@ -413,7 +413,7 @@ class VoterID:
             my_cursor=conn.cursor()
             
             sql = ("INSERT INTO VoterID VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
-            val= (self.VoterID.get(),self.EName.get(),self.Gender.get(),self.HName.get(),self.FName.get(),self.DOB.get(),self.Pincode.get(),self.State.get(),self.District.get(),self.Area.get(),self.Town.get(),self.Anchal.get(),self.Date.get())
+            val= (self.VoterID.get(),self.EName.get(),self.Gender.get(),self.HName.get(),self.FName.get(),self.DOB.get(),self.Pincode.get(),self.State.get(),self.District.get(),self.Area.get(),self.Town.get(),self.Anchal.get(),self.Date.get(),)
 
             my_cursor.execute(sql,val)
             conn.commit()
@@ -425,7 +425,7 @@ class VoterID:
         conn=mysql.connector.connect(username='root',password='password',host='localhost',database='Mydata')
         my_cursor=conn.cursor()
         sql=("UPDATE VoterID SET ElectorName=%s,Gender=%s,HusbandName=%s,FatherName=%s,DateOfBirth=%s,Pincode=%s,State=%s,District=%s,Area_Colony=%s,Town_Village=%s,Anchal_Thana=%s,Date=%s WHERE VoterID=%s")
-        val=(self.EName.get(),self.Gender.get(),self.HName.get(),self.FName.get(),self.DOB.get(),self.Pincode.get(),self.State.get(),self.District.get(),self.Area.get(),self.Town.get(),self.Anchal.get(),self.Date.get(),self.VoterID.get())
+        val=(self.EName.get(),self.Gender.get(),self.HName.get(),self.FName.get(),self.DOB.get(),self.Pincode.get(),self.State.get(),self.District.get(),self.Area.get(),self.Town.get(),self.Anchal.get(),self.Date.get(),self.VoterID.get(),)
 
         my_cursor.execute(sql,val)
         conn.commit()
@@ -467,18 +467,18 @@ class VoterID:
         
                 
     def iVoterInfo(self):
-        self.txtVoterInfo.insert(END,"VoterID:\t\t"+self.VoterID.get() + "\n")
-        self.txtVoterInfo.insert(END,"Elector's Name:\t\t"+self.EName.get() + "\n")
+        self.txtVoterInfo.insert(END,"VoterID:\t\t"+self.VoterID.get() + 2*"\n")
+        self.txtVoterInfo.insert(END,"Elector's Name:\t\t"+self.EName.get() + 2*"\n")
         self.txtVoterInfo.insert(END,"Gender:\t\t"+self.Gender.get() + "\n")
         self.txtVoterInfo.insert(END,"Husband's Name:\t\t"+self.HName.get() + "\n")
         self.txtVoterInfo.insert(END,"Father's Name:\t\t"+self.FName.get() + "\n")
-        self.txtVoterInfo.insert(END,"Date Of Birth:\t\t"+self.DOB.get() + "\n")
+        self.txtVoterInfo.insert(END,"Date Of Birth:\t\t"+self.DOB.get() + 2*"\n")
         self.txtVoterInfo.insert(END,"Pincode:\t\t"+self.Pincode.get() + "\n")
         self.txtVoterInfo.insert(END,"State:\t\t"+self.State.get() + "\n")
         self.txtVoterInfo.insert(END,"District:\t\t"+self.District.get() + "\n")
         self.txtVoterInfo.insert(END,"Area/ Colony:\t\t"+self.Area.get() + "\n")
         self.txtVoterInfo.insert(END,"Town/ Village:\t\t"+self.Town.get() + "\n")
-        self.txtVoterInfo.insert(END,"Anchal/ Thana:\t\t"+self.Anchal.get() + "\n")
+        self.txtVoterInfo.insert(END,"Anchal/ Thana:\t\t"+self.Anchal.get() + 2*"\n")
         self.txtVoterInfo.insert(END,"Date:\t\t"+self.Date.get() + "\n")
         
 
