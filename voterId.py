@@ -412,7 +412,7 @@ class VoterID:
         else:
             conn=mysql.connector.connect(username='root',password='password',host='localhost',database='Mydata')
             my_cursor=conn.cursor()
-            
+
             sql = ("INSERT INTO VoterID VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
             val= (self.VoterID.get(),self.EName.get(),self.Gender.get(),self.HName.get(),self.FName.get(),self.DOB.get(),self.Pincode.get(),self.State.get(),self.District.get(),self.Area.get(),self.Town.get(),self.Anchal.get(),self.Date.get(),)
 
@@ -486,6 +486,7 @@ class VoterID:
     def idelete(self):
         conn=mysql.connector.connect(username='root',password='password',host='localhost',database='Mydata')
         my_cursor=conn.cursor()
+
         sql= "DELETE from VoterID WHERE VoterID=%s"
         val=(self.VoterID.get(),)
         my_cursor.execute(sql,val)
@@ -500,7 +501,7 @@ class VoterID:
         self.VoterID.set("")
         self.EName.set("")
         self.Gender.set("")
-        self.HName.set("")
+        # self.HName.set("")
         self.FName.set("")
         self.DOB.set("")
         self.Pincode.set("")
@@ -517,7 +518,7 @@ class VoterID:
         if iexit>0:
             root.destroy()
             return
-
+    
 
 
 root=Tk()
