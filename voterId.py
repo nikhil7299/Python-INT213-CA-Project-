@@ -404,9 +404,10 @@ class VoterID:
         self.fetch_data()
 
     # ==================Functionality declaration=======================
+   
 
     def iVoterData(self):
-        if self.VoterID.get()=="" or self.EName.get()=="":
+        if self.VoterID.get()=="" or self.EName.get()=="" or self.Gender.get()=="" or self.FName.get()=="" or self.DOB.get()=="" or self.Pincode.get()=="" or self.State.get()==""  or self.District.get()=="" or self.Date.get()==""  :
                 messagebox.showerror("Error","Cumpulsory fields cannot be empty")
         else:
             conn=mysql.connector.connect(username='root',password='password',host='localhost',database='Mydata')
