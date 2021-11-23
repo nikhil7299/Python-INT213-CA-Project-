@@ -52,9 +52,6 @@ e2.config(font=l,width=28)
 e2.place(x=100,y=510)
 
 
-
-
-
 ###lineframe on entry
 
 Frame(w,width=370,height=2,bg='#141414').place(x=100,y=460)

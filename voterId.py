@@ -408,7 +408,15 @@ class VoterID:
 
     def iVoterData(self):
         if self.VoterID.get()=="" or self.EName.get()=="" or self.Gender.get()=="" or self.FName.get()=="" or self.DOB.get()=="" or self.Pincode.get()=="" or self.State.get()==""  or self.District.get()=="" or self.Date.get()==""  :
-                messagebox.showerror("Error","Cumpulsory fields cannot be empty")
+                messagebox.showerror("Error","All fieds are required..!!")
+        elif len(self.Pincode.get())<6 :
+            messagebox.showerror("Error","Enter valid Pincode..!!")
+        elif len(self.DOB.get())<10 :
+            messagebox.showerror("Error","Enter Date of Birth in valid format..!!")
+        elif len(self.Date.get())<10 :
+            messagebox.showerror("Error","Enter Date in valid format..!!")
+        elif len(self.VoterID.get())<10 :
+            messagebox.showerror("Error","Enter Valid VoterID..!!")
         else:
             conn=mysql.connector.connect(username='root',password='password',host='localhost',database='Mydata')
             my_cursor=conn.cursor()
